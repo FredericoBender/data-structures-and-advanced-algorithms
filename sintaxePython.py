@@ -92,3 +92,46 @@ try:  #Tenta fazer isso
 except: #Se der erro, "Except", faz isso
     
 break, continue, e pass #Quebra loop, volta pro início do loop, e continua logo na linha abaixo
+
+def fx(function,x): #Passando literalmente a função desejada para fx
+    fx=eval(function)
+    return fx
+print(fx("x*3",2))
+
+print("oi %s %d %f" % ("fredi",1,1.0)) #Interpolação de Strings mais eficiente
+string = u"batata" #String Unicode em python, agora pode utilizar qualquer caractere do mundo
+print(string[0:3]) #Vai printar parte da string "bat" 1ºincluso, 2ºnão incluso
+string.find("ta") #Retorna posição desse elemento #Retorna -1 se não encontrar o elemento
+string.replace("string","novastring") #Substitui
+
+#Expressões regulares
+#import re
+^ $ #Procura no Início ou Fim POUCO USADO, É MAIS PRA VALIDAR
+. #Pega todos os caracteres (menos \n)
+
+[] #São alternativas]
+[^abc] #Qualquer caractere menos "a" "b" ou "c'
+[.] = \. #Literalmente busca o ponto #sintaxe equivalente
+
+* + ? #Procura por: 0 ou mais, 1 ou mais , 0 ou 1
+{2,5} #Procura por 2 a 5 ocorrências
+
+| #Ou
+() #Grupo de busca, vai buscando por ordem dos parenteses, cada grupo é inserido em uma lista
+(?:) #Usado para não capturar esse grupo
+
+\d \D #Números, NÃO números
+\s \S #Espaços, NÃO espaços
+\w \W #Números e letras, NÃO números e letras
+
+print re.search("padrão ou RE","Vai buscar se o padrão está contido nesta string") #Busca uma ocorrência
+#PS: Para extrair o objeto usar:
+var.group()
+
+print re.findall("padrão ou RE","Vai buscar se o padrão está contido nesta string") #Busca todas as ocorrências
+
+ex:
+import re
+string = "bjdgs  s laplace@gmail.com.br aasfk jjk akkka kj thales@naosei.br h pradomatheus@yahoo.br baide"
+lista = re.findall("([\w._-]*@[a-z]*\.(?:com\.br|com|br))",string)
+print(lista)

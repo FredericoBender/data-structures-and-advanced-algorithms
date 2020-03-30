@@ -1,21 +1,22 @@
-tamanhoVetor = 1000000
-vetor = list(range(tamanhoVetor+1))
+#encoding=utf-8
 
-left = 0
-right = len(vetor) - 1
-
-iteracoes = 1
-
-def BuscaBinaria(vetor, left, right, valor, iteracoes):
+def BuscaBinaria(vetor, valor, left=0, right=None):
+    if(right==None):
+        right = len(vetor)-1
     if(right>=left):
-        indice = int(left + (right-left)/2)
+        indice = left + (right-left)//2
         if(vetor[indice]==valor):
-            return valor, iteracoes
+            return [valor, indice]
         if(vetor[indice]>valor):
-            return BuscaBinaria(vetor, left, indice-1, valor,iteracoes+1)
-        #if(vetor[indice]<valor):
-        return BuscaBinaria(vetor, indice+1, right, valor,iteracoes+1)
-    return "Não existe",iteracoes
+            return BuscaBinaria(vetor, valor, left, indice-1)
+        else:
+            return BuscaBinaria(vetor, valor, indice+1, right)
+    return [None, None]
 
+tamanhoVetor = 1000
+
+vetor = list(range(tamanhoVetor))
 valor = int(input("Escolha um valor de busca: "))
-print(BuscaBinaria(vetor, left, right, valor, iteracoes))
+
+print("Valor: " + str(BuscaBinaria(vetor, valor)[0]))
+print("Índice: " + str(BuscaBinaria(vetor, valor)[1]))

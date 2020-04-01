@@ -1,5 +1,6 @@
 # IMPORTAÇÕES  ###############################################################################
 
+#encoding=utf-8 Evita dor de cabeça com acentos e outros caracteres
 import nomeDaBiblioteca
 import nomeDaBiblioteca as n #Para usar como n.função
 from graphics import * #Importa tudo da biblioteca sem precisar utilizar o prefixo "graphics"
@@ -7,28 +8,26 @@ from graphics import * #Importa tudo da biblioteca sem precisar utilizar o prefi
 # LOOPS  #####################################################################################
 
 while (condição):
-    ...
 
-for (i in range(5)):
-    ...
+for (i in range(5)): #(0,1,2,3,4) -> (]
 
 # CONDIÇÕES  #################################################################################
 
 if(condição):
-    ...
+
 else:
-    ...
 
 # ENTRADA e PRINT  ###########################################################################
 
 x = int(input("digite o que você quer ler"))
 
+print("oi %s %d %f" % ("fredi",1,1.0)) #Interpolação de Strings mais eficiente
+print("{} é um número melhor que {}".format(var1, var2))
 print(str(x) + "seu valor")
 
 # FUNÇÕES  ###################################################################################
 
-def nomeDaFuncao(parametro1, parametro2):
-    ...
+def nomeDaFuncao(parametro1, parametro2):    ...
     return variavelRetornada
 
 def fatorial(n):
@@ -39,9 +38,11 @@ def fatorial(n):
 
 # TIPOS DE DADO  ############################################################################# 
 
-x = int(3)
-x = float(3.1415)
-x = str(2) #Converte em string
+X = int(3)
+X = float(3.1415)
+X = str(2) #Converte em string
+X = u"batata" #String Unicode em python, agora pode utilizar qualquer caractere do mundo
+X = "batata"
 X = True 
 X = False
 
@@ -55,6 +56,7 @@ len(lista) #Retorna o tamanho da lista
 
 lista = [0] * 10 #Cria lista de tamanho 10 zerada
 del lista[:] #Apaga elementos de uma lista sem exclui-lá
+print(string[0:3]) #Vai printar parte da string "bat" (0,1,2)
 linha.strip() #Remove caracteres especiais no fim da linha
 " ".join(lista) #Pega uma lista de strings e concatena em uma string que separa os itens por " "
 x = input().split(" ") #Le varios valores na mesma linha do terminal
@@ -85,6 +87,13 @@ arq.write("sequência") #Escreve no arquivo
 #Se utiliza Hashtag, ou ''' '''
 ''' bloco de comentário'''
 
+# ORIENTAÇÃO A OBJETOS #######################################################################
+
+def __init__(self) -> é o construtor que executa sempre que instanciar a classe
+def__getitem__(self) -> estamos usando sobrecarga de operadores, para escrever na forma nativa da linguagem
+self -> é utilizado para referenciar atributos do próprio objeto
+ex:(diferença de altura entre 2 objetos) - > return self.altura - outro.altura
+if (__name__=="__main__"): -> Não executa o if se o código for importado
 
 # EXTRAS  ####################################################################################
 
@@ -98,13 +107,11 @@ def fx(function,x): #Passando literalmente a função desejada para fx
     return fx
 print(fx("x*3",2))
 
-print("oi %s %d %f" % ("fredi",1,1.0)) #Interpolação de Strings mais eficiente
-string = u"batata" #String Unicode em python, agora pode utilizar qualquer caractere do mundo
-print(string[0:3]) #Vai printar parte da string "bat" 1ºincluso, 2ºnão incluso
 string.find("ta") #Retorna posição desse elemento #Retorna -1 se não encontrar o elemento
 string.replace("string","novastring") #Substitui
 
-#Expressões regulares
+#Expressões regulares ########################################################################
+
 #import re
 ^ $ #Procura no Início ou Fim POUCO USADO, É MAIS PRA VALIDAR
 . #Pega todos os caracteres (menos \n)

@@ -90,12 +90,18 @@ arq.write("sequência") #Escreve no arquivo
 # ORIENTAÇÃO A OBJETOS #######################################################################
 
 def __init__(self) -> é o construtor que executa sempre que instanciar a classe
-def__getitem__(self) -> estamos usando sobrecarga de operadores, para escrever na forma nativa da linguagem
+
+def__getitem__(self) -> estamos usando sobrecarga de operadores, para escrever na forma nativa da linguagem, utilizando os operadores da linguagem sobre o objeto
+def __repr__(self) -> usado para mostrar o objeto ao programador
+def __str__(self) -> usado para mostrar o objeto ao usuário final
+#Python não tem sobrecarga de funções(quando existe a mesma função com número diferente de parâmetros)
+
 self -> é utilizado para referenciar atributos do próprio objeto
 ex:(diferença de altura entre 2 objetos) - > return self.altura - outro.altura
-if (__name__=="__main__"): -> Não executa o if se o código for importado
 
 # EXTRAS  ####################################################################################
+
+if (__name__=="__main__"): -> Não executa o if se o código for importado
 
 try:  #Tenta fazer isso
 except: #Se der erro, "Except", faz isso

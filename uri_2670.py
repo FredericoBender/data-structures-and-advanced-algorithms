@@ -1,11 +1,11 @@
-a1 = int(input())
-a2 = int(input())
-a3 = int(input())
+firstFloor = int(input())
+secondFloor = int(input())
+thirdFloor = int(input())
 
-menor=(a2*2)+(a3*4) #1 andar
-if((a1*2)+(a3*2)<menor):
-    menor = (a1*2)+(a3*2) #2 andar
-if((a1*4)+(a2*2)<menor):
-    menor = (a1*4)+(a2*2) #3 andar
+lowestValue=(secondFloor*2)+(thirdFloor*4) #first floor
+if((firstFloor*2)+(thirdFloor*2)<lowestValue):
+    lowestValue = (firstFloor*2)+(thirdFloor*2) #second floor
+if((firstFloor*4)+(secondFloor*2)<lowestValue):
+    lowestValue = (firstFloor*4)+(secondFloor*2) #third floor
 
-print(menor)
+print(lowestValue)

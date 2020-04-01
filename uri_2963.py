@@ -1,14 +1,14 @@
 n = int(input())
-candidatos = []
-aprovado = True
+candidatesList = []
+approved = True
 
 for i in range(n):  
-    atual = int(input())
-    candidatos.append(atual)
-    if(i>0) and (atual>candidatos[0]):
-        aprovado=False
+    currentValue = int(input())
+    candidatesList.append(currentValue)
+    if(i>0) and (currentValue>candidatesList[0]):
+        approved=False
         
-if(aprovado):
+if(approved):
     print("S")
 else:
     print("N")

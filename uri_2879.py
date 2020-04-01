@@ -1,9 +1,9 @@
 n = int(input())
-contaVitorias = 0
+winsCounter = 0
 
 for i in range(n):
-    atual=int(input())
-    if(atual==2 or atual==3):
-        contaVitorias+=1
+    currentValue=int(input())
+    if(currentValue==2 or currentValue==3):
+        winsCounter+=1
         
-print(contaVitorias)
+print(winsCounter)

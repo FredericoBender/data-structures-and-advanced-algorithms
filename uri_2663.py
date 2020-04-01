@@ -1,17 +1,17 @@
 n = int(input())
 k = int(input())
-listaOrdenada = [0] * 1001
-indiceAtual = 1000
-contaAprovados = 0
+orderedList = [0] * 1001
+currentIndex = 1000
+approvedCounter = 0
 
-for i in range(n): #Conta os casos
-    valorAtual = int(input())
-    listaOrdenada[valorAtual]+=1
+for i in range(n):
+    currentValue = int(input())
+    orderedList[currentValue]+=1
 
-while(indiceAtual>=0): #Verifica quantos foram aprovados
-    contaAprovados+=listaOrdenada[indiceAtual]
-    if (contaAprovados>= k):
+while(currentIndex>=0):
+    approvedCounter+=orderedList[currentIndex]
+    if (approvedCounter>= k):
         break
-    indiceAtual-=1
+    currentIndex-=1
 
-print(contaAprovados)
+print(approvedCounter)

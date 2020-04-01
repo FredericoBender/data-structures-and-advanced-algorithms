@@ -1,5 +1,4 @@
 #encoding=utf-8
-import random
 
 def InsertionSort(valuesList):
 	"""O(n²) -> Return valuesList"""
@@ -105,16 +104,18 @@ def CountingSort(valuesList):
 		#3 - QuickSort -> n<100.000
 #range 4 = (1,2,3]
 
-n = 3000
-valuesList = list(range(n))
-random.shuffle(valuesList)
-#print(valuesList)
+if (__name__=="__main__"): #Don't will execute if import the file
+	import random
+	n = 3000
+	valuesList = list(range(n))
+	random.shuffle(valuesList)
+	#print(valuesList)
 
-#valuesList = InsertionSort(valuesList)
-#valuesList = SelectionSort(valuesList)
-#valuesList = BubbleSort(valuesList)
-#valuesList = MergeSort(valuesList)
-valuesList = QuickSort(valuesList)
-#valuesList = CountingSort(valuesList)
+	#valuesList = InsertionSort(valuesList)
+	#valuesList = SelectionSort(valuesList)
+	#valuesList = BubbleSort(valuesList)
+	#valuesList = MergeSort(valuesList)
+	valuesList = QuickSort(valuesList)
+	#valuesList = CountingSort(valuesList)
 
-#print("\n"+str(valuesList))
+	#print("\n"+str(valuesList))

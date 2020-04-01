@@ -13,9 +13,9 @@ def BinarySearch(valuesList, value, left=0, right=None):
             return BinarySearch(valuesList, value, index+1, right)
     return [None, None]
 
-
-valuesListSyze = 1000
-valuesList = list(range(valuesListSyze))
-value = int(input("Choose a value to search: "))
-print("Value: " + str(BinarySearch(valuesList, value)[0]))
-print("Index: " + str(BinarySearch(valuesList, value)[1]))
+if (__name__=="__main__"):
+    valuesListSyze = 1000
+    valuesList = list(range(valuesListSyze))
+    value = int(input("Choose a value to search: "))
+    print("Value: " + str(BinarySearch(valuesList, value)[0]))
+    print("Index: " + str(BinarySearch(valuesList, value)[1]))

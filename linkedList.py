@@ -1,18 +1,19 @@
 #encoding=utf-8
+
 class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
 
 class LinkedList:
-    def __init__(self): #__init__ é o construtor que sempre executa ao inicilizar a classe
+    def __init__(self):
         self.head = None
         self._size = 0
 
     def _get(self, index):
         currentValue = self.head
         for i in range(index):
-            if(currentValue): #Se ele existe
+            if(currentValue): 
                 currentValue = currentValue.next
             else:
                 raise IndexError("list index out of range")
@@ -41,6 +42,7 @@ class LinkedList:
         raise ValueError("{} is not in list".format(value))
     
     def insert(self, index, value):
+        """Insert a value in the list"""
         node = Node(value)
         if index == 0:
             node.next = self.head
@@ -52,6 +54,7 @@ class LinkedList:
         self._size = self._size + 1
 
     def remove(self, value):
+        """Remove a value in the list"""
         if self.head == None:
             raise ValueError("{} is not in list".format(value))
         elif self.head.value == value:
@@ -86,7 +89,6 @@ class LinkedList:
             raise IndexError("list index out of range")
     
     def __len__(self): #Python function len now will work with this object
-        """Return the size of the list"""
         return self._size
 
     def __repr__(self):

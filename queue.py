@@ -18,7 +18,7 @@ class Queue:
         else:
             self.last.next = node
             self.last = node
-        if (self.first==None):
+        if (self.first==None): #Last and first are the same Node at the begin
             self.first = node
         self._size+=1
 

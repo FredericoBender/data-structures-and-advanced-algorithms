@@ -10,23 +10,23 @@ class Stack:
         self.top = None
         self._size = 0
 
-    def push(self,value):
+    def push(self, value):
         node = Node(value)
         node.next = self.top
         self.top = node
-        self._size+=1
+        self._size += 1
 
     def pop(self):
-        if(self._size>0):
-            node=self.top
+        if self._size > 0:
+            node = self.top
             self.top = node.next
-            self._size-=1
+            self._size -= 1
             return node.value
         else:
             raise IndexError("The stack is empty")
 
     def peek(self):
-        if(self._size>0):
+        if self._size > 0:
             return self.top.value
         else:
             raise IndexError("The stack is empty")
@@ -37,7 +37,7 @@ class Stack:
     def __repr__(self):
         r = ""
         pointer = self.top
-        while(pointer):
+        while pointer:
             r = r + str(pointer.value) + "\n"
             pointer = pointer.next
         return r
@@ -46,7 +46,7 @@ class Stack:
         return self.__repr__()
 
 
-if (__name__=="__main__"):
+if __name__ == "__main__":
     stackList = Stack()
     stackList.push(2)
     stackList.push("mahoe")

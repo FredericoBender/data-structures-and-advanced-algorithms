@@ -13,7 +13,7 @@ class LinkedList:
     def _get(self, index):
         currentValue = self.head
         for i in range(index):
-            if(currentValue): 
+            if currentValue: 
                 currentValue = currentValue.next
             else:
                 raise IndexError("list index out of range")
@@ -21,24 +21,24 @@ class LinkedList:
 
     def append(self, value):
         """Append a value in the list"""
-        if(self.head):
+        if self.head:
             pointer = self.head
-            while (pointer.next!=None):
+            while pointer.next != None:
                 pointer = pointer.next
             pointer.next = Node(value)
         else:
             self.head = Node(value)
-        self._size+=1
+        self._size += 1
     
-    def index (self, value):
+    def index(self, value):
         """Return index of a value in the list"""
         currentValue = self.head
-        i=0
-        while(currentValue):
-            if(currentValue.value==value): 
+        i = 0
+        while currentValue:
+            if currentValue.value == value: 
                 return i
             currentValue = currentValue.next
-            i+=1
+            i += 1
         raise ValueError("{} is not in list".format(value))
     
     def insert(self, index, value):
@@ -48,7 +48,7 @@ class LinkedList:
             node.next = self.head
             self.head = node
         else:
-            pointer = self._get(index-1)
+            pointer = self._get(index - 1)
             node.next = pointer.next
             pointer.next = node
         self._size = self._size + 1
@@ -64,7 +64,7 @@ class LinkedList:
         else:
             ancestor = self.head
             pointer = self.head.next
-            while(pointer):
+            while pointer:
                 if pointer.value == value:
                     ancestor.next = pointer.next
                     pointer.next = None
@@ -76,14 +76,14 @@ class LinkedList:
 
     def __getitem__(self, index): 
         currentValue = self._get(index)
-        if(currentValue):
+        if currentValue:
             return currentValue.value
         else:
             raise IndexError("list index out of range")
 
-    def __setitem__(self,index,value):
+    def __setitem__(self, index, value):
         currentValue = self._get(index)
-        if(currentValue):
+        if currentValue:
             currentValue.value = value
         else:
             raise IndexError("list index out of range")
@@ -94,7 +94,7 @@ class LinkedList:
     def __repr__(self):
         r = ""
         pointer = self.head
-        while(pointer):
+        while pointer:
             r = r + str(pointer.value) + "->"
             pointer = pointer.next
         return r
@@ -102,7 +102,7 @@ class LinkedList:
     def __str__(self):
         return self.__repr__()
 
-if (__name__=="__main__"):
+if __name__ == "__main__":
     valuesList = LinkedList()
     valuesList.append(4)
     valuesList.append(3)
@@ -110,7 +110,7 @@ if (__name__=="__main__"):
     valuesList.insert(0,13)
     valuesList.insert(1,123)
 
-    valuesList[3]=300
+    valuesList[3] = 300
 
     print(valuesList[0])
     print(valuesList[1])

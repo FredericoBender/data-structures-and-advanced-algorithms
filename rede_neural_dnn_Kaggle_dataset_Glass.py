@@ -32,11 +32,7 @@ X_val, X_test, y_val, y_test = train_test_split(X_val, y_val, test_size = 0.5)
 
 model = tf.keras.models.Sequential([
        
-    tf.keras.layers.Dense(256, input_shape=(9,), activation='relu'),
-    tf.keras.layers.BatchNormalization(),
-    tf.keras.layers.Dropout(0.3),
-    
-    tf.keras.layers.Dense(256, activation='relu'),
+    tf.keras.layers.Dense(256, input_shape=(10,), activation='relu'),
     tf.keras.layers.BatchNormalization(),
     tf.keras.layers.Dropout(0.3),
     
@@ -44,7 +40,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.BatchNormalization(),
     tf.keras.layers.Dropout(0.5),
             
-    tf.keras.layers.Dense(7, activation='softmax')
+    tf.keras.layers.Dense(8, activation='softmax')
 ])
 
 
